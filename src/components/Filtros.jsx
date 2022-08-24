@@ -5,9 +5,20 @@ function Filtros(props) {
     <div className="inputContainer">
       <input type="date"></input>
       <input type="date"></input>
-      <input type="dropdown"></input>
-      <input type="dropdown"></input>
-      <input type="dropdown"></input>
+      <select>
+        <option>Seleccione un pais</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Chile">Chile</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Uruguay">Uruguay</option>
+      </select>
+      <select>
+        <option>Seleccione un Precio</option>
+        <option>$</option>
+        <option>$$</option>
+        <option>$$$</option>
+        <option>$$$$</option>
+      </select>
     </div>
   );
 }
