@@ -3,13 +3,13 @@ import React from "react";
 function Card(props) {
   const { hotel } = props;
   return (
-    <div>
-      <h1>{hotel.name}</h1>
-      <img src={hotel.photo} alt="logo" />
+    <div className="cardContainer">
+      <h3>{hotel.name}</h3>
+      <img src={hotel.photo} alt="logo" className="img" />
       <p>{hotel.description}</p>
       <p>{hotel.avaiabilityFrom}</p>
       <p>{hotel.availabilityTo}</p>
-      <p> {hotel.rooms}</p>
+      <p> {hotel.rooms} habitaciones</p>
       <p> {hotel.city}</p>
       <p> {hotel.country}</p>
       <p>{hotel.price}</p>
