@@ -2,15 +2,13 @@ import React from "react";
 import hotelsData from "../assets/scripts/data";
 import Card from "./Card";
 
-const minDate = new Date();
-const minimalDateFilter =
-  minDate.getFullYear() +
-  "-0" +
-  (minDate.getMonth() + 1) +
-  "-" +
-  minDate.getDate();
 function Hotels(props) {
   const { pais, precio, capacidad, fechaInicio, fechaFin } = props;
+  const minDate = new Date(fechaInicio);
+  console.log(minDate);
+  const maxDate = new Date(fechaFin);
+  console.log(maxDate);
+
   const filtroPorPaises = hotelsData.filter((item) =>
     pais !== "" ? item.country === pais : true
   );
@@ -26,14 +24,17 @@ function Hotels(props) {
       ? item.rooms > 20
       : capacidad === "Capacidad del hotel"
   );
-  const filtroPorFechaInicio = filtroPorCapacidad.filter((item) =>
-    fechaInicio === minimalDateFilter ? item.availabilityFrom === 0 : true
+  const filtroPorFecha = filtroPorCapacidad.filter((item) =>
+    !maxDate.getTime() && !minDate.getTime()
+      ? item.availabilityFrom > 0
+      : item.availabilityFrom <= minDate.getTime() &&
+        item.availabilityTo >= maxDate.getTime()
   );
   return (
     <div className="hotelsContainer">
       <div className="hoteles">
-        {filtroPorCapacidad.map((eachHotel) => (
-          <div className="hotelCard">
+        {filtroPorFecha.map((eachHotel, i) => (
+          <div key={i} className="hotelCard">
             <Card hotel={eachHotel} />
           </div>
         ))}

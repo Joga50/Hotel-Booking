@@ -34,7 +34,7 @@ function Filtros(props) {
           type="date"
           onChange={(e) => setFechaFin(e.target.value)}
           value={fechaFin}
-          min={minimalDate}
+          min={fechaInicio.replace(fechaInicio[9], Number(fechaInicio[9]) + 1)}
         ></input>
       </label>
       <label>
