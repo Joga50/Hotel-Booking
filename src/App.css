@@ -1,47 +1,64 @@
+/* --------------------------Global styles and main container-------- */
+/* imported font from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+body {
+  background-color: #675b4cd5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+/* App as main container in this case  */
 .App {
   height: 100%;
-  position: absolute;
   width: 100%;
+  font-family: "Roboto Condensed", sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* --------------------------Header-------------------------------- */
 .headerContainer {
-  background-color: rgb(171, 210, 72);
+  background-color: #ffffff;
   padding-bottom: 15px;
   padding-left: 15px;
   margin-top: -22px;
   padding-top: 40px;
-  width: 100%;
+  width: auto;
 }
 
 /* ----------------------------- Filtros ----------------------------------*/
+input,
+select {
+  font-family: "Roboto Condensed", sans-serif;
+}
 
 .inputContainer {
-  background-color: rgb(90, 156, 40);
-  width: 100%;
-  height: 10%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-bottom: 15px;
+  background-color: #e7811bad;
+  width: auto;
+  height: 100px;
+  padding: 25px;
 }
 /* ------------------------------------Hotels------------------------------------- */
-.hotelsContainer {
-  background-color: blanchedalmond;
-}
-.hoteles {
-  display: flex;
 
+.hotelMapContainer {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
   flex-flow: wrap;
 }
 
 .hotelCard {
   width: 20%;
-  background-color: rgb(61, 158, 158);
-  height: 20%;
-  padding: 5px;
+  background-color: #eae8e8;
+  text-align: left;
+  padding: 15px;
   margin: 5px;
+  border-radius: 2%;
 }
-
+.hotelDescription {
+  text-align: justify;
+}
 .img {
   max-width: 100%;
   height: auto;

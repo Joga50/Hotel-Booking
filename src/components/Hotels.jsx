@@ -31,14 +31,12 @@ function Hotels(props) {
         item.availabilityTo >= maxDate.getTime()
   );
   return (
-    <div className="hotelsContainer">
-      <div className="hoteles">
-        {filtroPorFecha.map((eachHotel, i) => (
-          <div key={i} className="hotelCard">
-            <Card hotel={eachHotel} />
-          </div>
-        ))}
-      </div>
+    <div className="hotelMapContainer">
+      {filtroPorFecha.map((eachHotel, i) => (
+        <div key={i} className="hotelCard">
+          <Card hotel={eachHotel} />
+        </div>
+      ))}
     </div>
   );
 }

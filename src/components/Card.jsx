@@ -6,26 +6,33 @@ function Card(props) {
   const { hotel } = props;
   return (
     <div className="cardContainer">
-      <h3>{hotel.name}</h3>
+      <h2>{hotel.name}</h2>
       <img src={hotel.photo} alt="logo" className="img" />
-      <p>{hotel.description}</p>
+      <p className="hotelDescription">{hotel.description}</p>
       <p>
-        Desde:{" "}
-        {Math.round(
-          hotel.availabilityFrom == cleanToday.valueOf()
-            ? hotel.availabilityFrom - cleanToday.valueOf()
-            : (hotel.availabilityFrom - cleanToday.valueOf()) / 86400000
-        )}{" "}
-        dias
+        Desde{" "}
+        <b>
+          {" "}
+          {Math.round(
+            hotel.availabilityFrom == cleanToday.valueOf()
+              ? hotel.availabilityFrom - cleanToday.valueOf()
+              : (hotel.availabilityFrom - cleanToday.valueOf()) / 86400000
+          )}
+        </b>{" "}
+        dias, Hasta{" "}
+        <b>
+          {" "}
+          {Math.round((hotel.availabilityTo - cleanToday.valueOf()) / 86400000)}
+        </b>{" "}
+        dias para hacer la reservación.
       </p>
       <p>
-        Hasta:{" "}
-        {Math.round((hotel.availabilityTo - cleanToday.valueOf()) / 86400000)}{" "}
-        dias
+        Capacidad <b>{hotel.rooms}</b> habitaciones
       </p>
-      <p>{hotel.rooms} habitaciones</p>
-      <p>{hotel.city}</p>
-      <p>{hotel.country}</p>
+      <p>
+        <b> {hotel.city}</b>, {hotel.country}.
+      </p>
+
       <p>{hotel.price === 1 && "$"}</p>
       <p>{hotel.price === 2 && "$$"}</p>
       <p>{hotel.price === 3 && "$$$"}</p>
