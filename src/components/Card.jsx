@@ -33,11 +33,13 @@ function Card(props) {
         <b> {hotel.city}</b>, {hotel.country}.
       </p>
 
-      <p>{hotel.price === 1 && "$"}</p>
-      <p>{hotel.price === 2 && "$$"}</p>
-      <p>{hotel.price === 3 && "$$$"}</p>
-      <p>{hotel.price === 4 && "$$$$"}</p>
-      <button>Reservar</button>
+      <p> {hotel.price === 1 && "Precio: $"}</p>
+      <p> {hotel.price === 2 && "Precio: $$"}</p>
+      <p>{hotel.price === 3 && "Precio: $$$"}</p>
+      <p> {hotel.price === 4 && "Precio: $$$$"}</p>
+      <button type="button" class="btn btn-outline-secondary">
+        Reservar
+      </button>
     </div>
   );
 }

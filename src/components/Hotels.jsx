@@ -32,11 +32,13 @@ function Hotels(props) {
   );
   return (
     <div className="hotelMapContainer">
-      {filtroPorFecha.map((eachHotel, i) => (
-        <div key={i} className="hotelCard">
-          <Card hotel={eachHotel} />
-        </div>
-      ))}
+      <div className="hotelMapContainer">
+        {filtroPorFecha.map((eachHotel, i) => (
+          <div key={i} className="hotelCard">
+            <Card hotel={eachHotel} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

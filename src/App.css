@@ -1,10 +1,16 @@
-/* --------------------------Global styles and main container-------- */
-/* imported font from google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
-body {
-  background-color: #675b4cd5;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* --------------------------Global styles and main container-------- */
+/* imported font from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+body {
+  background-color: #675b4cd5;
   text-align: center;
 }
 /* App as main container in this case  */
@@ -12,11 +18,11 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Roboto Condensed", sans-serif;
-  max-width: 1280px;
+  max-width: 1360px;
   margin: 0 auto;
 }
 
-/* --------------------------Header-------------------------------- */
+/* --------------------------Header Component-------------------------------- */
 .headerContainer {
   background-color: #ffffff;
   padding-bottom: 15px;
@@ -25,29 +31,50 @@ body {
   padding-top: 40px;
   width: auto;
 }
+.headerTittle {
+  font-family: "Lobster", cursive;
+  font-size: 60px;
+}
+/* ----------------------------- Filters Component ----------------------------------*/
+/* -----------------Bootstrap items--------------------------------------  */
+.input-group {
+  width: 20%;
+}
+.btn {
+  margin-top: 5px;
+}
+/* ----------------------------------------------------------------------- */
 
-/* ----------------------------- Filtros ----------------------------------*/
+.dates {
+  display: inline;
+  flex-direction: column;
+  width: auto;
+}
+div.dates .input-group {
+  width: 100%;
+}
 input,
 select {
   font-family: "Roboto Condensed", sans-serif;
 }
-
 .inputContainer {
   background-color: #e7811bad;
   width: auto;
-  height: 100px;
+  height: 150px;
   padding: 25px;
+  top: 0px;
+  display: flex;
+  justify-content: space-around;
 }
-/* ------------------------------------Hotels------------------------------------- */
-
+/* -----------------------------Hotels Component------------------------------------- */
 .hotelMapContainer {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   padding-top: 25px;
   flex-flow: wrap;
+  align-items: center;
 }
-
 .hotelCard {
   width: 20%;
   background-color: #eae8e8;
@@ -55,11 +82,103 @@ select {
   padding: 15px;
   margin: 5px;
   border-radius: 2%;
+  height: 800px;
 }
 .hotelDescription {
   text-align: justify;
+  margin-top: 10px;
 }
 .img {
   max-width: 100%;
   height: auto;
+}
+
+/* ---------------------------Footer------------------------ */
+.webFooter {
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+  display: flex;
+  height: 30px;
+}
+.copyright {
+  width: 50%;
+  margin: 3px;
+}
+.socialMediaIcons {
+  width: 50%;
+  margin: 3px;
+}
+div.socialMediaIcons i {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+div.socialMediaIcons a {
+  color: inherit;
+}
+div.socialMediaIcons i:hover {
+  color: white;
+}
+/* -----------------------Media Queries-------------------- */
+@media (max-width: 1200px) {
+  .dates {
+    display: flex;
+    flex-direction: row;
+  }
+  .inputContainer {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .input-group {
+    width: auto;
+  }
+  .hotelCard {
+    margin: 10px;
+    width: 25%;
+  }
+}
+@media (max-width: 1000px) {
+  .dates {
+    display: flex;
+    flex-direction: row;
+  }
+  .headerTittle {
+    font-family: "Lobster", cursive;
+    font-size: 40px;
+  }
+  .inputContainer {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .input-group {
+    width: auto;
+  }
+  .hotelCard {
+    width: 40%;
+  }
+}
+
+@media (max-width: 700px) {
+  .dates {
+    display: flex;
+    flex-direction: row;
+  }
+  .headerTittle {
+    font-family: "Lobster", cursive;
+    font-size: 40px;
+  }
+  .hotelMapContainer {
+    flex-direction: column;
+  }
+  .hotelCard {
+    width: auto;
+    padding: 15px;
+    margin: 25px;
+  }
 }

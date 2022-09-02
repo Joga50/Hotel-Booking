@@ -1,8 +1,10 @@
 import "./App.css";
+import React from "react";
+// -----------------------Components--------------------------
 import Header from "./components/Header";
 import Filtros from "./components/Filtros";
-import React from "react";
 import Hotels from "./components/Hotels";
+import Footer from "./components/Footer";
 
 function App() {
   const [pais, setPais] = React.useState("");
@@ -29,6 +31,7 @@ function App() {
         fechaInicio={fechaInicio}
         fechaFin={fechaFin}
       />
+      <Footer />
     </div>
   );
 }
